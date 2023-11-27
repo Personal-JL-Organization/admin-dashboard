@@ -11,13 +11,13 @@
       <div class="navigation">
         <ul>
           <li>
-            <a href="http://" target="#" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
               <span class="title">Brand Name</span>
             </a>
           </li>
           <li>
-            <a href="http://" target="#" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="home-outline"></ion-icon
               ></span>
@@ -25,7 +25,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="#" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="person-outline"></ion-icon
               ></span>
@@ -33,7 +33,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="#" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="chatbox-outline"></ion-icon
               ></span>
@@ -41,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="#" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="help-circle-outline"></ion-icon
               ></span>
@@ -49,7 +49,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="settings-outline"></ion-icon
               ></span>
@@ -57,7 +57,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="lock-closed-outline"></ion-icon
               ></span>
@@ -65,7 +65,7 @@
             </a>
           </li>
           <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="#" rel="noopener noreferrer">
               <span class="icon"
                 ><ion-icon name="log-out-outline"></ion-icon
               ></span>
@@ -74,6 +74,31 @@
           </li>
         </ul>
       </div>
+
+      <!-- main -->
+      <div class="main">
+        <div class="top-bar">
+          <!-- menu icon -->
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <!-- search -->
+          <div class="search">
+            <label for="">
+              <input type="text" placeholder="Search here" name="" id="">
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>
+          <!-- userImg -->
+          <div class="user">
+            <img src="img/user.jpg" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+
+      <!-- cards Dev: Josh-->
+
+
     </div>
     <script
       type="module"
@@ -83,5 +108,26 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script>
+      // MenuToggle
+      let toggle = document.querySelector('.toggle');
+      let navigation = document.querySelector('.navigation');
+      let main = document.querySelector('.main');
+
+      toggle.onclick = function() {
+        navigation.classList.toggle('active')
+        main.classList.toggle('active')
+      }
+      
+      // add hovered class in selected list item
+      let list = document.querySelectorAll('.navigation li')
+      function activeLink() {
+        list.forEach(item =>
+        item.classList.remove('hovered'))
+        this.classList.add('hovered')
+      }
+      list.forEach(item => item.addEventListener('mouseover', activeLink))
+    </script>
   </body>
 </html>
